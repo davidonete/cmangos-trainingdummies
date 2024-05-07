@@ -1,19 +1,17 @@
-#include "DualspecModuleConfig.h"
+#include "TrainingdummiesModuleConfig.h"
 
 namespace cmangos_module
 {
-    DualSpecModuleConfig::DualSpecModuleConfig()
-    : ModuleConfig("dualspec.conf")
+    TrainingDummiesModuleConfig::TrainingDummiesModuleConfig()
+    : ModuleConfig("trainingdummies.conf")
     , enabled(false)
-    , cost(0U)
     {
     
     }
 
-    bool DualSpecModuleConfig::OnLoad()
+    bool TrainingDummiesModuleConfig::OnLoad()
     {
-        enabled = config.GetBoolDefault("Dualspec.Enable", false);
-        cost = config.GetIntDefault("Dualspec.Cost", 10000U);
+        enabled = config.GetBoolDefault("Trainingdummies.Enable", false);
         return true;
     }
 }
