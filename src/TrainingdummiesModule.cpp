@@ -42,7 +42,7 @@ namespace cmangos_module
                 if (it != trainingDummyStatus.end())
                 {
                     TrainingDummyStatus& status = it->second;
-                    status.combatTimer = 20000;
+                    status.combatTimer = 10000;
                 }
             }
         }
