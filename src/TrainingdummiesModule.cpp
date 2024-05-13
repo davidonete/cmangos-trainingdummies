@@ -23,7 +23,8 @@ namespace cmangos_module
         {
             if (IsTrainingDummy(creature))
             {
-                TrainingDummyStatus& status = trainingDummyStatus[creature->GetObjectGuid().GetCounter()];
+                const uint32 dummyID = creature->GetObjectGuid().GetCounter();
+                TrainingDummyStatus& status = trainingDummyStatus[dummyID];
                 status.guid = creature->GetObjectGuid();
                 status.mapID = creature->GetMapId();
                 status.initialized = false;
@@ -38,7 +39,8 @@ namespace cmangos_module
         {
             if (victim->IsCreature() && IsTrainingDummy(victim))
             {
-                auto& it = trainingDummyStatus.find(victim->GetObjectGuid().GetCounter());
+                const uint32 dummyID = victim->GetObjectGuid().GetCounter();
+                auto& it = trainingDummyStatus.find(dummyID);
                 if (it != trainingDummyStatus.end())
                 {
                     TrainingDummyStatus& status = it->second;
