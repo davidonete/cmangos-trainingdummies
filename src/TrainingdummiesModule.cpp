@@ -37,10 +37,10 @@ namespace cmangos_module
     {
         if (GetConfig()->enabled)
         {
-            if (victim->IsCreature() && IsTrainingDummy(victim))
+            if (IsTrainingDummy(victim))
             {
                 const uint32 dummyID = victim->GetObjectGuid().GetCounter();
-                auto& it = trainingDummyStatus.find(dummyID);
+                auto it = trainingDummyStatus.find(dummyID);
                 if (it != trainingDummyStatus.end())
                 {
                     TrainingDummyStatus& status = it->second;
